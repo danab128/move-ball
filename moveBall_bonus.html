@@ -1,0 +1,35 @@
+<div id="ball" style="
+  z-index:5;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:green"></div>
+
+<script>
+
+var velocityX = 10;
+var velocityY = 0;
+var positionX = 0;
+var positionY = 0;
+var ball = document.getElementById('ball');
+
+// YOUR CODE 
+// ----------------
+var screenWidth = window.innerWidth;
+
+var interval = setInterval(function() {
+  // Manipulating the shape
+  positionX = positionX + velocityX;
+  ball.style.left = positionX + 'px';
+
+  // Bounce off the walls
+  if (positionX + 50 >= screenWidth || positionX <= 0) {
+    velocityX = -velocityX; // Reverse direction
+  }
+}, 100);
+
+
+</script>
